@@ -1,0 +1,6 @@
+{
+  "typescript.suggest.paths": false,
+"editor.fontLigatures": null,
+"editor.fontSize": 20,
+"editor.formatOnSave": true
+}
