@@ -6,8 +6,18 @@ const app = new Vue({
     created: null,
   },
   methods: {
-    createUrl() {
-      console.log(this.url, this.alias);
+    async createUrl() {
+      const response = await fetch("/url", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          alias: this.alias,
+          url: this.url,
+        }),
+      });
+      this.created = await response.json();
     },
   },
 });
