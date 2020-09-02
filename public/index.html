@@ -9,5 +9,20 @@
 
   <body>
     <header><h1>This is a URL shortener!</h1></header>
+
+    <main id="app">
+      <form @submit.prevent="createUrl()">
+        <label for="alias"> Alias </label>
+        <input v-model="alias" name="alias" id="alias" />
+        <label for="url"> Url </label>
+        <input v-model="url" name="url" id="url" />
+        <button type="submit">Shorten</button>
+      </form>
+      <pre>
+      {{JSON.stringify(created, null, 2)}}
+      </pre>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="app.js"></script>
   </body>
 </html>
